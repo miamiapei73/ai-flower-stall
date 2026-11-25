@@ -225,20 +225,26 @@
 
   .no-sel{color:var(--rose-deep)!important;font-weight:600}
 
-  /* ---------- Gallery ---------- */
-  .gallery-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
-  .gallery-main img{width:100%;border-radius:20px;box-shadow:var(--shadow);border:5px solid #fff;display:block}
-  .gallery-side .g-title{font-family:var(--serif);font-size:24px;margin-bottom:12px;line-height:1.4}
-  .gallery-side p{color:var(--muted);font-size:13.5px;margin-bottom:14px}
-  .flavor-list{display:grid;gap:10px}
-  .flavor{
-    display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);
-    border-radius:14px;padding:12px 14px;transition:.2s;
+  /* ---------- Products (两大主营) ---------- */
+  .product-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .product-card{
+    background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+    box-shadow:var(--shadow);position:relative;
   }
-  .flavor:hover{border-color:var(--rose);transform:translateX(4px)}
-  .flavor .f-ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-size:19px;flex-shrink:0}
-  .flavor b{font-size:13px;display:block}
-  .flavor span{font-size:12px;color:var(--muted)}
+  .product-card .pc-img{width:100%;height:300px;object-fit:cover;display:block;background:var(--bg-soft)}
+  .product-card .pc-badge{
+    position:absolute;top:16px;left:16px;z-index:2;
+    font-size:12px;font-weight:800;color:#fff;padding:6px 14px;border-radius:100px;
+    box-shadow:0 6px 16px rgba(0,0,0,.16);
+  }
+  .product-card .pc-body{padding:20px 22px 22px}
+  .product-card .pc-body h3{font-family:var(--serif);font-size:22px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .product-card .pc-body h3 .pc-price{font-family:var(--sans);font-size:19px;color:var(--rose-deep);font-weight:800;white-space:nowrap}
+  .product-card .pc-body h3 .pc-price small{font-size:12px;font-weight:600}
+  .product-card .pc-body p{font-size:13px;color:var(--muted);margin-bottom:14px}
+  .product-card .pc-tags{display:flex;gap:8px;flex-wrap:wrap}
+  .product-card .pc-tags span{font-size:11.5px;background:var(--bg-soft);border:1px solid var(--line);border-radius:100px;padding:5px 12px;color:var(--ink)}
+  .product-lead{text-align:center;font-size:13px;color:var(--muted);margin:-12px auto 24px;max-width:640px}
 
   /* ---------- Visual identity ---------- */
   .visual{background:linear-gradient(180deg,#fff,var(--bg-soft))}
@@ -287,26 +293,6 @@
   .principle b{font-size:13px;display:block;margin-bottom:3px}
   .principle span{font-size:11.5px;color:var(--muted)}
 
-  /* ---------- Materials ---------- */
-  .materials{background:linear-gradient(180deg,var(--bg-soft),#fff)}
-  .mat-wrap{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;max-width:980px;margin:0 auto}
-  .mat-scroll{overflow-x:auto}
-  table.mat{width:100%;border-collapse:collapse;font-size:12.5px;min-width:660px}
-  table.mat thead th{
-    background:var(--bg-soft);text-align:left;padding:12px 16px;font-size:11.5px;
-    color:var(--muted);font-weight:700;letter-spacing:.5px;white-space:nowrap;
-  }
-  table.mat td{padding:10px 16px;border-top:1px solid var(--line);vertical-align:top}
-  table.mat tr:hover td{background:#FFFCFA}
-  table.mat .cat{display:inline-block;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:100px;white-space:nowrap}
-  table.mat td.name{font-weight:600}
-  table.mat td.cost{color:var(--rose-deep);font-weight:700;white-space:nowrap}
-  .mat-sum{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 22px;background:var(--bg-soft);border-top:2px solid var(--line)}
-  .mat-sum .sum-label b{font-family:var(--serif);font-size:15px;display:block}
-  .mat-sum .sum-label span{font-size:11.5px;color:var(--muted)}
-  .mat-sum .sum-val{font-size:24px;font-weight:800;color:var(--rose-deep)}
-  .mat-note{font-size:11.5px;color:var(--muted);text-align:center;margin-top:14px}
-
   /* ---------- Booth info ---------- */
   .booth{background:#fff}
   .booth-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -347,11 +333,11 @@
     .hl-item:nth-child(2){border-right:none}
   }
   @media(max-width:900px){
-    .hero-grid,.gallery-grid{grid-template-columns:1fr;gap:28px}
+    .hero-grid{grid-template-columns:1fr;gap:28px}
     .hero-visual{order:-1}
     .fields,.cards{grid-template-columns:1fr}
     .booth-grid,.display-principles{grid-template-columns:repeat(2,1fr)}
-    .visual-grid{grid-template-columns:1fr 1fr}
+    .visual-grid,.product-grid{grid-template-columns:1fr 1fr}
     .nav-links{display:none}
   }
   @media(max-width:560px){
@@ -377,7 +363,6 @@
       <a href="#gallery">花束陈列</a>
       <a href="#visual">摊位视觉</a>
       <a href="#display">陈列方案</a>
-      <a href="#materials">物料清单</a>
       <a href="#booth">摊位信息</a>
     </div>
     <div class="nav-tag">腾讯新鹅市集 · 竞标方案</div>
@@ -509,25 +494,32 @@
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- PRODUCTS -->
 <section id="gallery">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Today's Bloom</div>
-      <h2>今日花束 · 现货陈列</h2>
-      <p>每一束都是当天现包，数量有限，先到先得</p>
+      <div class="eyebrow">What We Sell</div>
+      <h2>两大主营 · 鲜花花束 & 多肉盆栽</h2>
+      <p>一束花收藏今天的心情，一盆绿意把春天带回家</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-main">
-        <img src="assets/flowers.jpg" alt="花束陈列架">
+    <p class="product-lead">我们专注两类好物：当天现包的鲜花花束，与好养活的多肉盆栽。无论想表达心意，还是给桌面添一抹绿，这里都有一款适合你。</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <span class="pc-badge" style="background:linear-gradient(135deg,var(--rose),var(--rose-deep))">💐 主营一 · 鲜花花束</span>
+        <img class="pc-img" src="assets/flowers.jpg" alt="各色鲜花花束">
+        <div class="pc-body">
+          <h3>鲜花花束 <span class="pc-price"><small>¥</small>20 起</span></h3>
+          <p>玫瑰、雏菊、洋桔梗、尤加利……当天现包，只选状态最好的花材。可以告诉 AI 你的偏好，也可以直接指着一束说「就它了」。</p>
+          <div class="pc-tags"><span>🌹 浪漫花语系</span><span>🌼 清新治愈系</span><span>🤖 AI 专属定制</span></div>
+        </div>
       </div>
-      <div class="gallery-side">
-        <div class="g-title">不是标准答案，<br>是此刻的独家记忆。</div>
-        <p>玫瑰、雏菊、洋桔梗、尤加利……我们只选状态最好的花材。你可以告诉 AI 你的偏好，也可以直接指着一束说「就它了」。</p>
-        <div class="flavor-list">
-          <div class="flavor"><div class="f-ico" style="background:var(--rose-light)">🌹</div><div><b>浪漫花语系</b><span>粉玫瑰 · 洋桔梗 ｜ 适合表白与心动</span></div></div>
-          <div class="flavor"><div class="f-ico" style="background:#E7EEFA">🌼</div><div><b>清新治愈系</b><span>蓝雏菊 · 满天星 ｜ 适合治愈与平静</span></div></div>
-          <div class="flavor"><div class="f-ico" style="background:var(--sage-light)">🌵</div><div><b>多肉盆栽系</b><span>多肉 · 苔藓 ｜ 好养活，把绿意带回家</span></div></div>
+      <div class="product-card">
+        <span class="pc-badge" style="background:linear-gradient(135deg,var(--sage),#6E9A76)">🌵 主营二 · 多肉盆栽</span>
+        <img class="pc-img" src="assets/succulents.jpg" alt="多肉盆栽组合">
+        <div class="pc-body">
+          <h3>多肉盆栽 <span class="pc-price"><small>¥</small>10 起</span></h3>
+          <p>含盆带土，胖乎乎的多肉配上萌趣陶瓷盆，好养活、不费心。10 元就能带走一盆绿意，是摊位最受欢迎的引流小物。</p>
+          <div class="pc-tags"><span>🌱 含盆带土</span><span>🍀 好养易活</span><span>💰 10 元引流款</span></div>
         </div>
       </div>
     </div>
@@ -677,52 +669,6 @@
       <div class="principle"><span class="pi">💰</span><b>价格分区</b><span>10/20/25/30/40 由外向内递进</span></div>
       <div class="principle"><span class="pi">⭐</span><b>爆款 C 位</b><span>人气款放中层视线高度，贴爆款标</span></div>
     </div>
-  </div>
-</section>
-
-<!-- MATERIALS -->
-<section class="materials" id="materials">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Packing List</div>
-      <h2>物料清单</h2>
-      <p>按首周末两天摆摊预估，可按需增减；括号内为建议数量</p>
-    </div>
-
-    <div class="mat-wrap">
-      <div class="mat-scroll">
-        <table class="mat">
-          <thead>
-            <tr><th>类别</th><th>物料名称</th><th>规格 / 数量</th><th>用途</th><th>预算</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><span class="cat" style="background:var(--rose-light);color:var(--rose-deep)">花材</span></td><td class="name">玫瑰（粉/白/香槟）</td><td>各 1 扎 / 共 60 支</td><td>主力花束</td><td class="cost">¥240</td></tr>
-            <tr><td><span class="cat" style="background:var(--rose-light);color:var(--rose-deep)">花材</span></td><td class="name">洋桔梗 / 雏菊</td><td>混色 3 扎</td><td>搭配与主花</td><td class="cost">¥150</td></tr>
-            <tr><td><span class="cat" style="background:var(--rose-light);color:var(--rose-deep)">花材</span></td><td class="name">尤加利 / 满天星</td><td>配材 3 扎</td><td>填充与点缀</td><td class="cost">¥90</td></tr>
-            <tr><td><span class="cat" style="background:var(--sage-light);color:var(--sage)">盆栽</span></td><td class="name">多肉小盆栽</td><td>30–40 盆</td><td>10 元引流款</td><td class="cost">¥400</td></tr>
-            <tr><td><span class="cat" style="background:var(--cream);color:#A98659">包装</span></td><td class="name">牛皮纸 / 雪梨纸</td><td>各 100 张</td><td>花束外层包装</td><td class="cost">¥90</td></tr>
-            <tr><td><span class="cat" style="background:var(--cream);color:#A98659">包装</span></td><td class="name">丝带 / 麻绳</td><td>粉/绿/米 各 2 卷</td><td>束口装饰</td><td class="cost">¥50</td></tr>
-            <tr><td><span class="cat" style="background:var(--cream);color:#A98659">包装</span></td><td class="name">透明手提袋</td><td>100 个</td><td>顾客提走</td><td class="cost">¥70</td></tr>
-            <tr><td><span class="cat" style="background:var(--cream);color:#A98659">包装</span></td><td class="name">手写卡片 / logo 贴纸</td><td>各 200 张</td><td>花语与品牌</td><td class="cost">¥70</td></tr>
-            <tr><td><span class="cat" style="background:#E7EEFA;color:#6E8FC0">陈列</span></td><td class="name">三层铁艺花架</td><td>1–2 组</td><td>主体陈列（可复用）</td><td class="cost">¥300</td></tr>
-            <tr><td><span class="cat" style="background:#E7EEFA;color:#6E8FC0">陈列</span></td><td class="name">黑色方形花桶</td><td>12 个</td><td>醒花与陈列</td><td class="cost">¥120</td></tr>
-            <tr><td><span class="cat" style="background:#E7EEFA;color:#6E8FC0">陈列</span></td><td class="name">多肉展示木托盘</td><td>4–6 个</td><td>多肉专区</td><td class="cost">¥80</td></tr>
-            <tr><td><span class="cat" style="background:#E7EEFA;color:#6E8FC0">陈列</span></td><td class="name">背景布 / 桌布</td><td>奶油米 各 1 块</td><td>统一视觉</td><td class="cost">¥100</td></tr>
-            <tr><td><span class="cat" style="background:var(--sage-light);color:var(--sage)">设备</span></td><td class="name">充电串灯 / 夹灯</td><td>3 串 + 2 盏</td><td>氛围与打光</td><td class="cost">¥120</td></tr>
-            <tr><td><span class="cat" style="background:var(--sage-light);color:var(--sage)">设备</span></td><td class="name">插排 / 充电宝</td><td>各 1</td><td>平板与灯供电</td><td class="cost">¥100</td></tr>
-            <tr><td><span class="cat" style="background:var(--rose-light);color:var(--rose-deep)">宣传</span></td><td class="name">主招牌 / 侧旗</td><td>各 1</td><td>品牌识别</td><td class="cost">¥200</td></tr>
-            <tr><td><span class="cat" style="background:var(--rose-light);color:var(--rose-deep)">宣传</span></td><td class="name">AI 立牌 / 价目牌</td><td>各 2–4</td><td>体验引导与标价</td><td class="cost">¥110</td></tr>
-            <tr><td><span class="cat" style="background:#EEEAE5;color:var(--muted)">工具耗材</span></td><td class="name">花剪 / 剪刀 / 胶带</td><td>2 把 + 若干</td><td>现场包花</td><td class="cost">¥90</td></tr>
-            <tr><td><span class="cat" style="background:#EEEAE5;color:var(--muted)">工具耗材</span></td><td class="name">喷壶 / 保鲜剂 / 手套</td><td>若干</td><td>花材养护</td><td class="cost">¥50</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="mat-sum">
-        <div class="sum-label"><b>预估总投入</b><span>含可复用道具；扣除花架等耐用品后，单次耗材约 ¥1,500</span></div>
-        <div class="sum-val">≈ ¥2,430</div>
-      </div>
-    </div>
-    <p class="mat-note">* 预算为首周末试摆估算，价格随采购渠道浮动；花架、招牌等可重复使用，长期摆摊成本更低。</p>
   </div>
 </section>
 
