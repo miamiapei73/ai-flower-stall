@@ -39,26 +39,26 @@
   /* ---------- Nav ---------- */
   nav{
     position:sticky;top:0;z-index:50;
-    background:rgba(255,249,245,.85);
+    background:rgba(255,249,245,.88);
     backdrop-filter:saturate(1.6) blur(14px);
     border-bottom:1px solid var(--line);
   }
   .nav-inner{
-    max-width:1160px;margin:0 auto;padding:14px 24px;
-    display:flex;align-items:center;justify-content:space-between;
+    max-width:1160px;margin:0 auto;padding:13px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
   }
-  .brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.5px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.5px;white-space:nowrap}
   .brand .mark{
     width:34px;height:34px;border-radius:50%;
     background:linear-gradient(135deg,var(--rose),#F3A9B9);
     display:grid;place-items:center;color:#fff;font-size:17px;
     box-shadow:0 6px 14px rgba(224,122,143,.35);
   }
-  .nav-links{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+  .nav-links{display:flex;gap:20px;font-size:13px;color:var(--muted);flex-wrap:wrap;justify-content:center}
   .nav-links a:hover{color:var(--rose-deep)}
   .nav-tag{
     font-size:12px;color:var(--rose-deep);background:var(--rose-light);
-    padding:6px 14px;border-radius:100px;font-weight:600;
+    padding:6px 14px;border-radius:100px;font-weight:600;white-space:nowrap;
   }
 
   /* ---------- Hero ---------- */
@@ -123,7 +123,7 @@
 
   /* ---------- Section shared ---------- */
   section{padding:64px 0}
-  .sec-head{text-align:center;max-width:640px;margin:0 auto 40px}
+  .sec-head{text-align:center;max-width:660px;margin:0 auto 40px}
   .sec-head .eyebrow{font-size:13px;font-weight:700;color:var(--rose);letter-spacing:2px;text-transform:uppercase}
   .sec-head h2{font-family:var(--serif);font-size:clamp(30px,4vw,42px);letter-spacing:1px;margin:10px 0 12px}
   .sec-head p{color:var(--muted);font-size:15px}
@@ -134,7 +134,7 @@
     background:#fff;border-radius:28px;box-shadow:var(--shadow);
     padding:38px;max-width:920px;margin:0 auto;border:1px solid var(--line);
   }
-  .ai-panel-top{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+  .ai-panel-top{display:flex;align-items:center;gap:12px;margin-bottom:28px;flex-wrap:wrap}
   .ai-badge{
     display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;
     color:#fff;background:linear-gradient(135deg,var(--sage),#6E9A76);
@@ -228,8 +228,75 @@
   .flavor b{font-size:14px;display:block}
   .flavor span{font-size:12.5px;color:var(--muted)}
 
+  /* ---------- Visual identity ---------- */
+  .visual{background:linear-gradient(180deg,#fff,var(--bg-soft))}
+  .palette{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:34px}
+  .sw-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(120,90,80,.05)}
+  .sw-card .chip{height:74px}
+  .sw-card .meta{padding:11px 13px}
+  .sw-card .meta b{font-size:13px;display:block}
+  .sw-card .meta span{font-size:11px;color:var(--muted)}
+  .visual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .vc{
+    background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 24px;
+    box-shadow:0 8px 24px rgba(120,90,80,.06);transition:.3s;
+  }
+  .vc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--rose)}
+  .vc .vi{font-size:30px;display:block;margin-bottom:10px}
+  .vc h4{font-family:var(--serif);font-size:18px;margin-bottom:10px}
+  .vc p{font-size:13px;color:var(--muted)}
+  .vc ul{list-style:none;margin-top:14px;display:grid;gap:8px}
+  .vc li{font-size:12.5px;padding-left:17px;position:relative;color:var(--ink)}
+  .vc li::before{content:"✦";position:absolute;left:0;color:var(--rose);font-size:11px;top:1px}
+
+  /* ---------- Display plan ---------- */
+  .display{background:#fff}
+  .shelf{
+    border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+    background:var(--bg);max-width:900px;margin:0 auto 34px;
+  }
+  .shelf-level{display:grid;grid-template-columns:120px 1fr;align-items:stretch;border-bottom:1px solid var(--line)}
+  .shelf-level:last-child{border-bottom:none}
+  .shelf-level .lv-label{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+    padding:18px 10px;color:#fff;text-align:center;
+  }
+  .shelf-level .lv-label b{font-family:var(--serif);font-size:17px}
+  .shelf-level .lv-label span{font-size:11px;opacity:.9}
+  .shelf-level .lv-content{padding:16px 22px;background:#fff}
+  .shelf-level .lv-content .lv-title{font-size:14px;font-weight:700;margin-bottom:8px}
+  .shelf-level .lv-content .items{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-size:12px;background:var(--bg-soft);border:1px solid var(--line);border-radius:100px;padding:5px 13px;color:var(--ink)}
+  .chip b{color:var(--rose-deep);margin-left:4px}
+  .display-principles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .principle{text-align:center;padding:22px 16px;background:var(--bg);border:1px solid var(--line);border-radius:18px;transition:.3s}
+  .principle:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .principle .pi{font-size:26px;display:block;margin-bottom:8px}
+  .principle b{font-size:14px;display:block;margin-bottom:4px}
+  .principle span{font-size:12px;color:var(--muted)}
+
+  /* ---------- Materials ---------- */
+  .materials{background:linear-gradient(180deg,var(--bg-soft),#fff)}
+  .mat-wrap{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden;max-width:980px;margin:0 auto}
+  .mat-scroll{overflow-x:auto}
+  table.mat{width:100%;border-collapse:collapse;font-size:13px;min-width:660px}
+  table.mat thead th{
+    background:var(--bg-soft);text-align:left;padding:14px 18px;font-size:12px;
+    color:var(--muted);font-weight:700;letter-spacing:.5px;white-space:nowrap;
+  }
+  table.mat td{padding:13px 18px;border-top:1px solid var(--line);vertical-align:top}
+  table.mat tr:hover td{background:#FFFCFA}
+  table.mat .cat{display:inline-block;font-size:11px;font-weight:700;padding:3px 11px;border-radius:100px;white-space:nowrap}
+  table.mat td.name{font-weight:600}
+  table.mat td.cost{color:var(--rose-deep);font-weight:700;white-space:nowrap}
+  .mat-sum{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 24px;background:var(--bg-soft);border-top:2px solid var(--line)}
+  .mat-sum .sum-label b{font-family:var(--serif);font-size:15px;display:block}
+  .mat-sum .sum-label span{font-size:12px;color:var(--muted)}
+  .mat-sum .sum-val{font-size:26px;font-weight:800;color:var(--rose-deep)}
+  .mat-note{font-size:12px;color:var(--muted);text-align:center;margin-top:16px}
+
   /* ---------- Booth info ---------- */
-  .booth{background:linear-gradient(180deg,var(--bg-soft),#fff)}
+  .booth{background:#fff}
   .booth-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .binfo{
     background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 22px;text-align:center;
@@ -243,7 +310,7 @@
   .menu{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;max-width:760px;margin:34px auto 0;box-shadow:var(--shadow)}
   .menu h3{font-family:var(--serif);font-size:22px;text-align:center;margin-bottom:20px}
   .menu-row{display:flex;justify-content:space-between;align-items:center;padding:13px 4px;border-bottom:1px dashed var(--line);font-size:14px}
-  .menu-row:last-child{border:none}
+  .menu-row:last-of-type{border:none}
   .menu-row .m-name{display:flex;align-items:center;gap:10px}
   .menu-row .m-name .em{font-size:20px}
   .menu-row .m-price{font-weight:800;color:var(--rose-deep);font-size:16px}
@@ -262,18 +329,23 @@
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
   /* ---------- Responsive ---------- */
+  @media(max-width:980px){
+    .palette{grid-template-columns:repeat(3,1fr)}
+  }
   @media(max-width:900px){
     .hero-grid,.gallery-grid{grid-template-columns:1fr;gap:34px}
     .hero-visual{order:-1}
     .fields,.cards{grid-template-columns:1fr}
-    .booth-grid{grid-template-columns:repeat(2,1fr)}
+    .booth-grid,.display-principles{grid-template-columns:repeat(2,1fr)}
+    .visual-grid{grid-template-columns:1fr 1fr}
     .nav-links{display:none}
   }
-  @media(max-width:520px){
+  @media(max-width:560px){
     .hero{padding-top:48px}
     .ai-panel{padding:24px 18px}
-    .booth-grid{grid-template-columns:1fr 1fr}
+    .booth-grid,.display-principles,.visual-grid,.palette{grid-template-columns:1fr 1fr}
     section{padding:48px 0}
+    .shelf-level{grid-template-columns:88px 1fr}
   }
 </style>
 </head>
@@ -286,6 +358,9 @@
     <div class="nav-links">
       <a href="#ai">AI 配花</a>
       <a href="#gallery">花束陈列</a>
+      <a href="#visual">摊位视觉</a>
+      <a href="#display">陈列方案</a>
+      <a href="#materials">物料清单</a>
       <a href="#booth">摊位信息</a>
     </div>
     <div class="nav-tag">腾讯新鹅市集 · 限时快闪</div>
@@ -307,7 +382,7 @@
       <div class="info-strip">
         <div><span class="ico">📍</span><span><b>位置</b><br>新鹅市集 · 花艺区 A 位</span></div>
         <div><span class="ico">🕐</span><span><b>营业</b><br>周末 14:00–21:00</span></div>
-        <div><span class="ico">💐</span><span><b>价格</b><br>¥19.9 起</span></div>
+        <div><span class="ico">💐</span><span><b>价格</b><br>¥10 起</span></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -334,7 +409,6 @@
       </div>
 
       <div class="fields">
-        <!-- 衣服颜色 -->
         <div class="field">
           <label>① 今天穿什么颜色？ <span>选一个</span></label>
           <div class="opts" id="colorOpts">
@@ -349,7 +423,6 @@
           </div>
         </div>
 
-        <!-- 心情 -->
         <div class="field">
           <label>② 此刻心情如何？ <span>选一个</span></label>
           <div class="opts" id="moodOpts">
@@ -363,7 +436,6 @@
           </div>
         </div>
 
-        <!-- 香味 -->
         <div class="field">
           <label>③ 喜欢什么香味？ <span>选一个</span></label>
           <div class="opts" id="scentOpts">
@@ -414,10 +486,202 @@
         <div class="flavor-list">
           <div class="flavor"><div class="f-ico" style="background:var(--rose-light)">🌹</div><div><b>浪漫花语系</b><span>粉玫瑰 · 洋桔梗 ｜ 适合表白与心动</span></div></div>
           <div class="flavor"><div class="f-ico" style="background:#E7EEFA">🌼</div><div><b>清新治愈系</b><span>蓝雏菊 · 满天星 ｜ 适合治愈与平静</span></div></div>
-          <div class="flavor"><div class="f-ico" style="background:var(--cream)">🌾</div><div><b>自然元气系</b><span>香槟玫瑰 · 尤加利 ｜ 适合日常与好心情</span></div></div>
+          <div class="flavor"><div class="f-ico" style="background:var(--sage-light)">🌵</div><div><b>多肉盆栽系</b><span>多肉 · 苔藓 ｜ 好养活，把绿意带回家</span></div></div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- VISUAL IDENTITY -->
+<section class="visual" id="visual">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Booth Visual</div>
+      <h2>摊位视觉方案</h2>
+      <p>「气象台 + 花艺」的温柔科普感，统一色系让摊位在市集里一眼被认出</p>
+    </div>
+
+    <div class="palette">
+      <div class="sw-card"><div class="chip" style="background:#E07A8F"></div><div class="meta"><b>玫瑰粉</b><span>主色 · 招牌/包装</span></div></div>
+      <div class="sw-card"><div class="chip" style="background:#86A98C"></div><div class="meta"><b>鼠尾草绿</b><span>辅色 · AI 立牌</span></div></div>
+      <div class="sw-card"><div class="chip" style="background:#F5E7D2"></div><div class="meta"><b>奶油米</b><span>底色 · 背景布</span></div></div>
+      <div class="sw-card"><div class="chip" style="background:#FFF9F5"></div><div class="meta"><b>暖白</b><span>留白 · 灯箱</span></div></div>
+      <div class="sw-card"><div class="chip" style="background:#3B3330"></div><div class="meta"><b>墨棕</b><span>文字 · 价目牌</span></div></div>
+    </div>
+
+    <div class="visual-grid">
+      <div class="vc">
+        <span class="vi">🪧</span>
+        <h4>招牌设计</h4>
+        <p>主招牌 + 侧旗 + 桌牌三件套，统一「小花气象台」字样与 ✿ 标志。</p>
+        <ul>
+          <li>主招牌：暖白底 + 玫瑰粉字，顶部 ✿ 圆标</li>
+          <li>侧旗：写 slogan「你今天的心情，开成什么花？」</li>
+          <li>桌牌：亚克力立牌标 AI 体验入口</li>
+        </ul>
+      </div>
+      <div class="vc">
+        <span class="vi">🎐</span>
+        <h4>空间氛围</h4>
+        <p>轻量布置，1 小时可搭好，撤摊也方便。</p>
+        <ul>
+          <li>奶油米背景布挂满整面，压住杂乱背景</li>
+          <li>暖光串灯绕货架，傍晚出片率更高</li>
+          <li>仿真绿植垂挂，呼应「气象台花园」主题</li>
+        </ul>
+      </div>
+      <div class="vc">
+        <span class="vi">📸</span>
+        <h4>打卡点</h4>
+        <p>留一个让人愿意拍照发圈的角落，自带传播。</p>
+        <ul>
+          <li>花墙 + 手举牌：「今日心情：____」填空牌</li>
+          <li>AI 匹配结果可截图，带摊位 logo 水印</li>
+          <li>拍照送小贴纸，引导关注/复购</li>
+        </ul>
+      </div>
+      <div class="vc">
+        <span class="vi">💬</span>
+        <h4>话术与氛围</h4>
+        <p>把「卖花」变成「帮人表达」，降低决策门槛。</p>
+        <ul>
+          <li>招呼语：要不要让 AI 帮你配一束？</li>
+          <li>爆款口播：10 元多肉、20 元小花束先带一束试试</li>
+          <li>花卡上印花语，方便顾客转送他人</li>
+        </ul>
+      </div>
+      <div class="vc">
+        <span class="vi">🎨</span>
+        <h4>包装视觉</h4>
+        <p>统一牛皮纸 + 色系丝带，成本可控又显质感。</p>
+        <ul>
+          <li>牛皮纸/雪梨纸外层，贴圆形 logo 贴纸</li>
+          <li>按色系配丝带：粉/绿/米三色</li>
+          <li>手写小卡 + 透明手提袋，提走即广告</li>
+        </ul>
+      </div>
+      <div class="vc">
+        <span class="vi">💡</span>
+        <h4>照明与用电</h4>
+        <p>市集灯光参差，自带光源保证花束状态。</p>
+        <ul>
+          <li>充电式串灯 2–3 串，绕货架与背景布</li>
+          <li>夹式小射灯打亮精品区花束</li>
+          <li>插排 + 充电宝，供平板与灯串使用</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISPLAY PLAN -->
+<section class="display" id="display">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Merchandising</div>
+      <h2>商品陈列方案</h2>
+      <p>按价格梯度分区陈列，让顾客一眼看懂、顺手就买</p>
+    </div>
+
+    <div class="shelf">
+      <div class="shelf-level">
+        <div class="lv-label" style="background:linear-gradient(160deg,#E07A8F,#C9607A)"><b>顶层</b><span>精品形象区</span></div>
+        <div class="lv-content">
+          <div class="lv-title">精品与定制款 · 撑起摊位质感，吸引驻足</div>
+          <div class="items">
+            <span class="chip">AI 专属定制<b>¥40</b></span>
+            <span class="chip">晚霞莓果<b>¥40</b></span>
+            <span class="chip">奶油可可<b>¥40</b></span>
+          </div>
+        </div>
+      </div>
+      <div class="shelf-level">
+        <div class="lv-label" style="background:linear-gradient(160deg,#86A98C,#6E9A76)"><b>中层</b><span>人气主力区</span></div>
+        <div class="lv-content">
+          <div class="lv-title">人气混合花束 · 视线黄金位，主推走量</div>
+          <div class="items">
+            <span class="chip">粉雾心跳<b>¥30</b></span>
+            <span class="chip">蓝调晴空<b>¥25</b></span>
+            <span class="chip">香槟日落<b>¥30</b></span>
+          </div>
+        </div>
+      </div>
+      <div class="shelf-level">
+        <div class="lv-label" style="background:linear-gradient(160deg,#C9A97E,#A98659)"><b>下层</b><span>入门引流区</span></div>
+        <div class="lv-content">
+          <div class="lv-title">小花束与单支 · 低门槛冲动消费，随手带一束</div>
+          <div class="items">
+            <span class="chip">森林来信小花束<b>¥20</b></span>
+            <span class="chip">单支玫瑰<b>¥20</b></span>
+            <span class="chip">手写卡片<b>+¥5</b></span>
+          </div>
+        </div>
+      </div>
+      <div class="shelf-level">
+        <div class="lv-label" style="background:linear-gradient(160deg,#9CB49A,#7C9C7A)"><b>专区</b><span>多肉台</span></div>
+        <div class="lv-content">
+          <div class="lv-title">多肉盆栽独立台面 · 靠近摊口，10 元引流利器</div>
+          <div class="items">
+            <span class="chip">多肉小盆栽<b>¥10</b></span>
+            <span class="chip">多肉组合盆<b>¥10</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="display-principles">
+      <div class="principle"><span class="pi">🌈</span><b>色彩渐变</b><span>同色系由浅到深排列，视觉更整齐</span></div>
+      <div class="principle"><span class="pi">📐</span><b>高低错落</b><span>前低后高，避免遮挡，露出每束花</span></div>
+      <div class="principle"><span class="pi">💰</span><b>价格分区</b><span>10/20/25/30/40 由外向内递进</span></div>
+      <div class="principle"><span class="pi">⭐</span><b>爆款 C 位</b><span>人气款放中层视线高度，贴爆款标</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section class="materials" id="materials">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Packing List</div>
+      <h2>物料清单</h2>
+      <p>按首周末两天摆摊预估，可按需增减；括号内为建议数量</p>
+    </div>
+
+    <div class="mat-wrap">
+      <div class="mat-scroll">
+        <table class="mat">
+          <thead>
+            <tr><th>类别</th><th>物料名称</th><th>规格 / 数量</th><th>用途</th><th>预算</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="cat" style="background:var(--rose-light);color:var(--rose-deep)">花材</span></td><td class="name">玫瑰（粉/白/香槟）</td><td>各 1 扎 / 共 60 支</td><td>主力花束</td><td class="cost">¥240</td></tr>
+            <tr><td><span class="cat" style="background:var(--rose-light);color:var(--rose-deep)">花材</span></td><td class="name">洋桔梗 / 雏菊</td><td>混色 3 扎</td><td>搭配与主花</td><td class="cost">¥150</td></tr>
+            <tr><td><span class="cat" style="background:var(--rose-light);color:var(--rose-deep)">花材</span></td><td class="name">尤加利 / 满天星</td><td>配材 3 扎</td><td>填充与点缀</td><td class="cost">¥90</td></tr>
+            <tr><td><span class="cat" style="background:var(--sage-light);color:var(--sage)">盆栽</span></td><td class="name">多肉小盆栽</td><td>30–40 盆</td><td>10 元引流款</td><td class="cost">¥400</td></tr>
+            <tr><td><span class="cat" style="background:var(--cream);color:#A98659">包装</span></td><td class="name">牛皮纸 / 雪梨纸</td><td>各 100 张</td><td>花束外层包装</td><td class="cost">¥90</td></tr>
+            <tr><td><span class="cat" style="background:var(--cream);color:#A98659">包装</span></td><td class="name">丝带 / 麻绳</td><td>粉/绿/米 各 2 卷</td><td>束口装饰</td><td class="cost">¥50</td></tr>
+            <tr><td><span class="cat" style="background:var(--cream);color:#A98659">包装</span></td><td class="name">透明手提袋</td><td>100 个</td><td>顾客提走</td><td class="cost">¥70</td></tr>
+            <tr><td><span class="cat" style="background:var(--cream);color:#A98659">包装</span></td><td class="name">手写卡片 / logo 贴纸</td><td>各 200 张</td><td>花语与品牌</td><td class="cost">¥70</td></tr>
+            <tr><td><span class="cat" style="background:#E7EEFA;color:#6E8FC0">陈列</span></td><td class="name">三层铁艺花架</td><td>1–2 组</td><td>主体陈列（可复用）</td><td class="cost">¥300</td></tr>
+            <tr><td><span class="cat" style="background:#E7EEFA;color:#6E8FC0">陈列</span></td><td class="name">黑色方形花桶</td><td>12 个</td><td>醒花与陈列</td><td class="cost">¥120</td></tr>
+            <tr><td><span class="cat" style="background:#E7EEFA;color:#6E8FC0">陈列</span></td><td class="name">多肉展示木托盘</td><td>4–6 个</td><td>多肉专区</td><td class="cost">¥80</td></tr>
+            <tr><td><span class="cat" style="background:#E7EEFA;color:#6E8FC0">陈列</span></td><td class="name">背景布 / 桌布</td><td>奶油米 各 1 块</td><td>统一视觉</td><td class="cost">¥100</td></tr>
+            <tr><td><span class="cat" style="background:var(--sage-light);color:var(--sage)">设备</span></td><td class="name">充电串灯 / 夹灯</td><td>3 串 + 2 盏</td><td>氛围与打光</td><td class="cost">¥120</td></tr>
+            <tr><td><span class="cat" style="background:var(--sage-light);color:var(--sage)">设备</span></td><td class="name">插排 / 充电宝</td><td>各 1</td><td>平板与灯供电</td><td class="cost">¥100</td></tr>
+            <tr><td><span class="cat" style="background:var(--rose-light);color:var(--rose-deep)">宣传</span></td><td class="name">主招牌 / 侧旗</td><td>各 1</td><td>品牌识别</td><td class="cost">¥200</td></tr>
+            <tr><td><span class="cat" style="background:var(--rose-light);color:var(--rose-deep)">宣传</span></td><td class="name">AI 立牌 / 价目牌</td><td>各 2–4</td><td>体验引导与标价</td><td class="cost">¥110</td></tr>
+            <tr><td><span class="cat" style="background:#EEEAE5;color:var(--muted)">工具耗材</span></td><td class="name">花剪 / 剪刀 / 胶带</td><td>2 把 + 若干</td><td>现场包花</td><td class="cost">¥90</td></tr>
+            <tr><td><span class="cat" style="background:#EEEAE5;color:var(--muted)">工具耗材</span></td><td class="name">喷壶 / 保鲜剂 / 手套</td><td>若干</td><td>花材养护</td><td class="cost">¥50</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mat-sum">
+        <div class="sum-label"><b>预估总投入</b><span>含可复用道具；扣除花架等耐用品后，单次耗材约 ¥1,500</span></div>
+        <div class="sum-val">≈ ¥2,430</div>
+      </div>
+    </div>
+    <p class="mat-note">* 预算为首周末试摆估算，价格随采购渠道浮动；花架、招牌等可重复使用，长期摊摊成本更低。</p>
   </div>
 </section>
 
@@ -432,15 +696,17 @@
     <div class="booth-grid">
       <div class="binfo"><span class="bi">📍</span><h4>摊位位置</h4><p>新鹅市集 · 花艺区 A 位</p></div>
       <div class="binfo"><span class="bi">🕐</span><h4>营业时间</h4><p>周末 14:00–21:00</p></div>
-      <div class="binfo"><span class="bi">💰</span><h4>价格区间</h4><p>¥19.9 – ¥49.9</p></div>
+      <div class="binfo"><span class="bi">💰</span><h4>价格区间</h4><p>¥10 – ¥40</p></div>
       <div class="binfo"><span class="bi">✨</span><h4>特色服务</h4><p>AI 专属配花</p></div>
     </div>
 
     <div class="menu">
       <h3>🌸 今日花单</h3>
-      <div class="menu-row"><span class="m-name"><span class="em">🌹</span> 单支玫瑰 / 小花束</span><span class="m-price">¥19.9</span></div>
-      <div class="menu-row"><span class="m-name"><span class="em">💐</span> 人气混合花束</span><span class="m-price">¥39.9</span></div>
-      <div class="menu-row"><span class="m-name"><span class="em">🌷</span> AI 专属定制花束</span><span class="m-price">¥49.9</span></div>
+      <div class="menu-row"><span class="m-name"><span class="em">🌵</span> 多肉盆栽</span><span class="m-price">¥10</span></div>
+      <div class="menu-row"><span class="m-name"><span class="em">🌿</span> 小花束 / 单支玫瑰</span><span class="m-price">¥20</span></div>
+      <div class="menu-row"><span class="m-name"><span class="em">🌼</span> 人气混合花束</span><span class="m-price">¥25</span></div>
+      <div class="menu-row"><span class="m-name"><span class="em">🌷</span> 主题花束</span><span class="m-price">¥30</span></div>
+      <div class="menu-row"><span class="m-name"><span class="em">💐</span> AI 专属定制 / 精品花束</span><span class="m-price">¥40</span></div>
       <div class="menu-row"><span class="m-name"><span class="em">🎁</span> 花束 + 手写卡片</span><span class="m-price">+¥5</span></div>
       <p class="menu-note">* 价格以现场标价为准 · 每日花材不同，图片仅供参考</p>
     </div>
@@ -458,45 +724,52 @@
 </footer>
 
 <script>
-  /* ---------------- 花束数据 ---------------- */
+  /* ---------------- 花束 / 商品数据 ---------------- */
   const bouquets = [
     {
-      name:"粉雾心跳", en:"Pink Whisper", price:39.9, emoji:"🌹",
-      grad:"linear-gradient(135deg,#FCE0E7,#F6B9C8)",
-      colors:["粉色","白色"], moods:["浪漫","心动","开心"], scents:["浓郁花香","奶油甜香"],
-      flower:"粉玫瑰 · 洋桔梗 · 尤加利", language:"躲在粉色里的，是只想给你的温柔",
-      tag:"浪漫人气款"
+      name:"多肉小森林", en:"Little Succulent", price:10, emoji:"🌵", itemLabel:"配置",
+      grad:"linear-gradient(135deg,#E4EFDF,#BDD6B8)",
+      colors:["绿色","白色"], moods:["平静","治愈","元气"], scents:["淡雅木质","清新果香"],
+      flower:"多肉组合 · 苔藓 · 装饰石", language:"不用天天照顾，也能一直陪着你",
+      tag:"低门槛绿植"
     },
     {
-      name:"蓝调晴空", en:"Blue Mood", price:39.9, emoji:"🌼",
-      grad:"linear-gradient(135deg,#E3ECFA,#B9D0F0)",
-      colors:["蓝色","白色","紫色"], moods:["平静","治愈","emo"], scents:["清新果香","淡雅木质"],
-      flower:"蓝雏菊 · 满天星 · 尤加利", language:"把天气交给气象台，把心情交给花",
-      tag:"治愈系"
-    },
-    {
-      name:"香槟日落", en:"Champagne Sunset", price:42.9, emoji:"🌾",
-      grad:"linear-gradient(135deg,#F6E7CF,#EFD09B)",
-      colors:["黄色","绿色","白色","红色"], moods:["开心","元气","治愈"], scents:["清新果香","奶油甜香"],
-      flower:"香槟玫瑰 · 黄玫瑰 · 尤加利", language:"今日份好心情，正在派送中",
-      tag:"元气日常款"
-    },
-    {
-      name:"奶油可可", en:"Cream Cocoa", price:46.9, emoji:"🌷",
-      grad:"linear-gradient(135deg,#F4E4DE,#E7C8C0)",
-      colors:["白色","粉色","紫色"], moods:["平静","浪漫","治愈"], scents:["奶油甜香","浓郁花香"],
-      flower:"白玫瑰 · 粉玫瑰 · 尤加利", language:"像奶油一样化开的，是柔软的喜欢",
-      tag:"温柔奶咖系"
-    },
-    {
-      name:"森林来信", en:"Forest Letter", price:35.9, emoji:"🍃",
+      name:"森林来信", en:"Forest Letter", price:20, emoji:"🍃",
       grad:"linear-gradient(135deg,#E4EFDF,#BDD6B8)",
       colors:["绿色","白色","黄色"], moods:["平静","治愈","元气"], scents:["淡雅木质","清新果香"],
       flower:"白洋桔梗 · 尤加利 · 小雏菊", language:"来自森林的一封绿色问候",
       tag:"自然木质系"
     },
     {
-      name:"晚霞莓果", en:"Berry Sunset", price:49.9, emoji:"💐",
+      name:"蓝调晴空", en:"Blue Mood", price:25, emoji:"🌼",
+      grad:"linear-gradient(135deg,#E3ECFA,#B9D0F0)",
+      colors:["蓝色","白色","紫色"], moods:["平静","治愈","emo"], scents:["清新果香","淡雅木质"],
+      flower:"蓝雏菊 · 满天星 · 尤加利", language:"把天气交给气象台，把心情交给花",
+      tag:"治愈系"
+    },
+    {
+      name:"粉雾心跳", en:"Pink Whisper", price:30, emoji:"🌹",
+      grad:"linear-gradient(135deg,#FCE0E7,#F6B9C8)",
+      colors:["粉色","白色"], moods:["浪漫","心动","开心"], scents:["浓郁花香","奶油甜香"],
+      flower:"粉玫瑰 · 洋桔梗 · 尤加利", language:"躲在粉色里的，是只想给你的温柔",
+      tag:"浪漫人气款"
+    },
+    {
+      name:"香槟日落", en:"Champagne Sunset", price:30, emoji:"🌾",
+      grad:"linear-gradient(135deg,#F6E7CF,#EFD09B)",
+      colors:["黄色","绿色","白色","红色"], moods:["开心","元气","治愈"], scents:["清新果香","奶油甜香"],
+      flower:"香槟玫瑰 · 黄玫瑰 · 尤加利", language:"今日份好心情，正在派送中",
+      tag:"元气日常款"
+    },
+    {
+      name:"奶油可可", en:"Cream Cocoa", price:40, emoji:"🌷",
+      grad:"linear-gradient(135deg,#F4E4DE,#E7C8C0)",
+      colors:["白色","粉色","紫色"], moods:["平静","浪漫","治愈"], scents:["奶油甜香","浓郁花香"],
+      flower:"白玫瑰 · 粉玫瑰 · 尤加利", language:"像奶油一样化开的，是柔软的喜欢",
+      tag:"温柔奶咖系"
+    },
+    {
+      name:"晚霞莓果", en:"Berry Sunset", price:40, emoji:"💐",
       grad:"linear-gradient(135deg,#F6DDE2,#E9A7B6)",
       colors:["红色","粉色","紫色","黑色"], moods:["心动","浪漫","开心"], scents:["浓郁花香","奶油甜香"],
       flower:"红玫瑰 · 粉玫瑰 · 满天星", language:"热烈且真诚，像晚霞一样不设防",
@@ -571,7 +844,7 @@
           <div class="body">
             <h4>${b.name}</h4>
             <div class="en">${b.en}</div>
-            <div class="row"><b>花材</b>　${b.flower}</div>
+            <div class="row"><b>${b.itemLabel||"花材"}</b>　${b.flower}</div>
             <div class="row"><b>花语</b>　${b.language}</div>
             <div class="why">${whyText(b)}</div>
           </div>
